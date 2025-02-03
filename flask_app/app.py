@@ -39,7 +39,7 @@ def get_students():
 @app.route('/students', methods=['POST'])
 def add_student():
     data = request.get_json()
-    student_id = len(students) + 1
+    student_id = len(students) -1
     students[student_id] = {
         'id': student_id,
         'first_name': data['first_name'],

@@ -51,7 +51,7 @@
 
    - Please be sure to install Virtualbox and Vagrant on your personal machines.  Virtualbox will be the default provider for the Vagrant VM I have setup for this assignment.  The Vagrant VM (configured in the Vagrantfile in this repository) contains a configuration for setting up a basic Ubuntu Linux VM and installing "Flask"(a Python web framework) and spinning up the basic REST API I have coded there.  
 
-   - Please install Wireshark and Postman from the links above.
+   - Please install Wireshark and Postman from the links above.  Once Wireshas has finished installing please start your "listener".  We will leave Wireshark listening through this assignment.
 
    - "Clone" this GitHub repository to your personal machine [Basic Cloning Instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
@@ -72,17 +72,49 @@
     ifconfig
 
     (collect your IP address)
-
-    exit
-
-    (this will leave your VM)
    ```
 
-   Look for the line which gives your your IP address.  Should be something like: 192.168.X.X
+   Look for the line which gives your your IP address.  Should be something like: 192.168.X.X. 
 
-   - 
-   
-4. **Please commit your code to a public GitHub repository**
+   - Next let's validate the Flask API is running with:
 
-    - Once you have completed all three tasks in your code please commit your updated code to a public repository in GitHub!
-    - Once you have a public repository link submit that link to the week one assignment in Brightspace!
+   ```bash
+
+   curl <Your IP address>:5000/students
+   ```
+
+   This should return a JSON list of students.  Assuming it does then your Fask API is running and returning data!  
+
+   - Next run the following to exit your vagrant machine and go back to your personal machine.
+
+   ```bash
+   exit
+   ```
+
+   - Please open the collection in Postman and replace the "base_url" current variable under the collection header  with your IP address.  I.E. if your Vagrant machine IP address is 192.168.2.56 please replace http://127.0.0.1:5000 with http://192.168.2.56:5000 
+
+   - Now that your IP address has been updated please try running the "Get Students" command in Postman.  What doyou get in response?  Probably nothing right?  Why would that be?  
+
+   - use the "vagrant ssh" command in your terminal to go back into the Vagrant Ubuntu machine.  You were able to run the curl command before right?  Try running it again to validate the API is up and responsive.  If it is then we're likely dealing with a firewall issue!
+
+   - Now we're going to enable the firewall.  Please run the following:
+
+   ```bash
+
+   sudo ufw allow 22/tcp
+   sudo ufw allow 5000/tcp
+   sudo ufw enable
+   sudo ufw status
+   ```
+
+   this will enable ssh and the port that Flask is listening on and you should see them as allowed with the status command.  Please run "exit" to return to your personal host machine.
+
+   - Next re-open Postman and try running the various commands listed there.  You can try logging in (not that it actually does much other than validate username/password).  If you don't see the password then how do you think you can find it?  Is it in any other command?  Also please try updating the JSON in the "Add Students" endpoint.  
+
+   - Finally stop the capture on WireShark and save the output to a file.  To finish the assignment for this week please take your saved output and filter it down to all of the network traffic between your Host machine and the vagrant VM!  Upload that filtered .pcap file to Brightspace!
+
+   - To completely wipe your Vagrant VM you can run the following in your terminal:
+
+   ```bash
+   vagrant destroy
+   ```
