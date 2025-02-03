@@ -3,11 +3,11 @@
 
 ### Overview
 
-    This assignment will provide an introduction to host-level security considerations, application security, and one of the tools you can use to monitor security around your host - wireshark!
+This assignment will provide an introduction to host-level security considerations, application security, and one of the tools you can use to monitor security around your host - wireshark!
 
 ### Learning Outcomes
 
-    You will learn about securing your host machine including updates, securely accessing it, and lowering its accessibility to the outside world.  You will also get experience with the host-based firewall and using Wireshark to monitor traffic between your host and other computers!  We will also be exploring a Linux VM with a Flask API you will be setting up via "Vagrant"!
+You will learn about securing your host machine including updates, securely accessing it, and lowering its accessibility to the outside world.  You will also get experience with the host-based firewall and using Wireshark to monitor traffic between your host and other computers!  We will also be exploring a Linux VM with a Flask API you will be setting up via "Vagrant"!
     
 
 ### Instructions
@@ -29,7 +29,7 @@
 
         This article from Kapersky is a great overview of what a firewall is!  We will be playing around with firewalls in Linux in your hands-on assignment for this week!
 
-  - [Uncomplicated firewall - ufw](https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands)
+   - [Uncomplicated firewall - ufw](https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands)
 
         This article from Digital Ocean is a great resource for learning and using the "Uncomplicated Firewall" (ufw).  The Ubuntu-based Vagrant machine has ufw installed on it and in the hands-on lab we will be reviewing enabling it and opening ports so your applications will run!  Please note that this sits on top of iptables [Linux iptables](https://www.geeksforgeeks.org/iptables-command-in-linux-with-examples/) which is the tool that manages the host-based firewall on Linux!  While iptables are a lot more powerful and configurable ufw is a really simple tool for updating basic firewall rules.
 
