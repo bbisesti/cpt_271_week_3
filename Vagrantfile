@@ -1,6 +1,9 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"  # Use Ubuntu 18.04
 
+
+  # configure bridge networking
+  config.vm.network "public_network", bridge: "enxa0cec8ba8cca"
   # Provisioning script to install Flask and set up the application
   config.vm.provision "shell", inline: <<-SHELL
     # Update and install Python and pip
@@ -15,6 +18,6 @@ Vagrant.configure("2") do |config|
   SHELL
 
   # Forward port 5000 to the host machine
-  config.vm.network "forwarded_port", guest: 5000, host: 5000
+  # config.vm.network "forwarded_port", guest: 5000, host: 5000
 end
 
