@@ -111,7 +111,7 @@ You will learn about securing your host machine including updates, securely acce
 
    - Next re-open Postman and try running the various commands listed there.  You can try logging in (not that it actually does much other than validate username/password).  If you don't see the password then how do you think you can find it?  Is it in any other command?  Also please try updating the JSON in the "Add Students" endpoint.  
 
-   - Finally stop the capture on WireShark and save the output to a file.  To finish the assignment for this week please take your saved output and filter it down to all of the network traffic between your Host machine and the vagrant VM!  Upload that filtered .pcap file to Brightspace!
+   - Finally stop the capture on WireShark and save the output to a file.  To finish the assignment for this week please take your saved output and filter it down to all of the network traffic between your Host machine and the vagrant VM!  Upload that filtered .pcap file to Brightspace along with 250 to 500 words on your thoughts regarding the content captured (in the comments seciton!). was the port being closed important?  what other ports were opened and why?  What do you think some of the ossues were regarding the content sent back and forth to the API and potential issues regarding its "readability" for someone on your network listening?
 
    - To completely wipe your Vagrant VM you can run the following in your terminal:
 
