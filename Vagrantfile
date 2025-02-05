@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
 
 
   # configure bridge networking
-  config.vm.network "public_network", bridge: "enxa0cec8ba8cca"
+  config.vm.network "public_network", bridge: "eno1"
   # Provisioning script to install Flask and set up the application
   config.vm.provision "shell", inline: <<-SHELL
     # Update and install Python and pip
