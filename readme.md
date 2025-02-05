@@ -41,6 +41,10 @@ You will learn about securing your host machine including updates, securely acce
 
         This is a useful tool for testing REST APIs!  You can run any of your GET/POST/PUT/DELETE commands from a graphical User interface (GUI) and save them as a "collection".  I have included a collection which you can use to test this REST API and collect network traffic.
 
+   - [Wireshark](https://www.wireshark.org/)
+  
+         Please download Wireshark as you will be utilizing this to read network traffic!
+
    - [Vagrant VMs](https://www.vagrantup.com/)
 
         This assignment will utilize a "Vagrant" virtual machine I have included in this repository.  You will also need [Virtualbox](https://www.virtualbox.org/) installed as your "Virtualization Provider".  Vagrant is a useful tool for software developers to share applications between themselves and not need to worry about different device configurations as they can develop their software on the same platform via the virtual machine!  Though Docker or other Containerization technologies are widely used today Vagrant is still useful when you need full OS functionality or (in our case) the ability to control other host-level configurations like the firewall!
@@ -51,7 +55,7 @@ You will learn about securing your host machine including updates, securely acce
 
    - Please be sure to install Virtualbox and Vagrant on your personal machines.  Virtualbox will be the default provider for the Vagrant VM I have setup for this assignment.  The Vagrant VM (configured in the Vagrantfile in this repository) contains a configuration for setting up a basic Ubuntu Linux VM and installing "Flask"(a Python web framework) and spinning up the basic REST API I have coded there.  
 
-   - Please install Wireshark and Postman from the links above.  Once Wireshas has finished installing please start your "listener".  We will leave Wireshark listening through this assignment.
+   - Please install Wireshark and Postman from the links above.  Once Wireshas has finished installing please start your "capture".  We will leave Wireshark listening to your network traffic through this assignment.
 
    - "Clone" this GitHub repository to your personal machine [Basic Cloning Instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
