@@ -59,7 +59,14 @@ You will learn about securing your host machine including updates, securely acce
 
    - "Clone" this GitHub repository to your personal machine [Basic Cloning Instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-   - Once you have a local repository of this project on your personal machine navigate into it via a terminal (Mac/Linux) or Command-Line window (Windows) and run the following command which will spin-up the Ubuntu machine!
+   - Once you have a local repository of this project on your personal machine open the "Vagrantfile" and look for the line that says:
+
+   ```bash
+   config.vm.network "public_network", bridge: "eno1"
+   ```
+   Please be sure to change the "eno1" with your actual network device so that the "bridged" guest VM contacts your DHCP server for an IP address.
+   
+   - Then, navigate into it via a terminal (Mac/Linux) or Command-Line window (Windows) and run the following command which will spin-up the Ubuntu machine!
 
     ```bash
      vagrant up
